@@ -11,6 +11,7 @@ body,
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --muted-background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -34,6 +35,7 @@ body,
 
   .dark {
     --background: 0 0% 3.9%;
+    --muted-background: 240 25% 3.14%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -63,3 +65,10 @@ body,
     @apply bg-background text-foreground;
   }
 }
+/* .tradingview-widget-copyright a[style] {
+  display: none !important;
+}
+
+.tradingview-widget-container div:last-child {
+  display: none !important;
+} */

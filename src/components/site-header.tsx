@@ -17,7 +17,7 @@ interface TabProps {
 
 const tabs: TabProps[] = [
   {
-    name: "Home",
+    name: "Over view",
     link: "overview",
   },
   {

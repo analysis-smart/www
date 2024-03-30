@@ -31,6 +31,7 @@ const config = {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          background: "hsl(var(--muted-background))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -38,7 +39,8 @@ const config = {
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          foreground: "hsl(var(--muted-background))",
+          background: "hsl(var(--muted-background))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
