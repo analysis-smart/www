@@ -34,9 +34,9 @@ export function SiteHeader() {
   return (
     <header
       ref={ref}
-      className="bg-background-light fixed top-0 z-30 w-screen flex-none bg-background/95 backdrop-blur transition-colors duration-500 supports-[backdrop-filter]:bg-background/60"
+      className="fixed top-0 z-50 w-screen flex-none backdrop-blur transition-colors duration-500 supports-[backdrop-filter]:bg-background/95"
     >
-      <div className="h-20 space-y-2.5 border-border/40">
+      <div className="h-20 border-border/40 bg-background/95">
         <div className="container grid h-full grid-cols-3 items-center py-4">
           <Logo />
           <div className="col-span-2 flex items-center justify-end lg:justify-between">
@@ -44,14 +44,14 @@ export function SiteHeader() {
             <WalletButton />
           </div>
         </div>
-        <div className="container mx-auto hidden items-center space-x-6 border-b border-border px-12 text-sm lg:flex">
+        <div className="container mx-auto hidden items-center space-x-6 border-b border-border px-12 pt-2.5 text-sm  lg:flex bg-background z-50">
           {tabs.map((tab) => (
             <Link
               href={tab.link}
               className={cn(
                 "group border-foreground/50 pb-[6px] first:-ml-3 hover:border-b",
                 tab.link === pathname.replace(/^\/+/, "") &&
-                  "border-b border-foreground",
+                "border-b border-foreground",
               )}
               key={tab.name.toLowerCase()}
             >

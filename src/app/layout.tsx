@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={cn(inter.className)}>
         <TRPCReactProvider>
           <ThemeProvider>
-            <div vaul-drawer-wrappe="">{children}</div>
+            <div vaul-drawer-wrappe="" className="overflow-y-auto ">{children}</div>
             <TailwindIndicator />
           </ThemeProvider>
         </TRPCReactProvider>

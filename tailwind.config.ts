@@ -1,3 +1,5 @@
+import { nextui } from "@nextui-org/react";
+
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -7,6 +9,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -94,7 +97,15 @@ const config = {
           "to": {
             "backgroundPosition": "-200% 0"
           }
-        }
+        },
+        "marquee-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-up": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -102,11 +113,13 @@ const config = {
         flip: 'flip 6s infinite steps(2, end)',
         rotate: 'rotate 3s linear infinite both',
         'background-shine': 'background-shine 2s linear',
-        "shine": "shine 2s linear infinite"
+        "shine": "shine 2s linear infinite",
+        "marquee-left": "marquee-left var(--duration, 30s) linear infinite",
+        "marquee-up": "marquee-up var(--duration, 30s) linear infinite",
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), nextui()],
 } satisfies Config
 
 export default config

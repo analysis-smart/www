@@ -1,47 +1,50 @@
-import { Twitter } from "lucide-react";
-import Link from "next/link";
-import { Icons } from "~/components/icons";
-import { SymbolOverviewNoSSR } from "./_components/overview";
+import { Nav } from "./_components/nav";
+import { TokensList } from "./_components/tokens-list";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import { PopularTokens } from "./_components/popular-tokens";
 
 export default function OverViewPage() {
+  const list = [
+    { name: "Popular tokens" },
+  ];
+  
   return (
     <>
       <div className="stable-scrollbar-gutter w-full space-y-6 overflow-y-auto">
-        <div className="space-y-4 px-0.5 py-1">
-          <Link
-            href="/overview"
-            target="_blank"
-            className="group mb-5 flex items-center font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 sm:mb-4 lg:text-sm lg:leading-6"
-          >
-            <div className="zinc-box mr-4 rounded-lg p-1 ring-1 ring-gray-950/5 group-hover:ring-0 group-hover:brightness-100 dark:ring-gray-700/40">
-              <Twitter className="h-4 w-4" />
-            </div>
-            <span>Twitter</span>
-          </Link>
-          <Link
-            href="/overview"
-            target="_blank"
-            className="group mb-5 flex items-center font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 sm:mb-4 lg:text-sm lg:leading-6"
-          >
-            <div className="zinc-box mr-4 rounded-lg p-1 ring-1 ring-gray-950/5 group-hover:ring-0 group-hover:brightness-100 dark:ring-gray-700/40">
-              <Icons.telegram className="h-4 w-4 group-hover:brightness-100" />
-            </div>
-            <span>Community</span>
-          </Link>
-          <Link
-            href="/overview"
-            target="_blank"
-            className="group mb-5 flex items-center font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 sm:mb-4 lg:text-sm lg:leading-6"
-          >
-            <div className="zinc-box mr-4 rounded-lg p-1 ring-1 ring-gray-950/5 group-hover:ring-0 group-hover:brightness-100 dark:ring-gray-700/40">
-              <Icons.route_line className="h-4 w-4 group-hover:brightness-100" />
-            </div>
-            <span>route line</span>
-          </Link>
-        </div>
+        <Nav />
       </div>
-      <div className="h-auto w-full">
-        <SymbolOverviewNoSSR />
+      <div className="h-auto w-full space-y-10">
+        <TokensList />
+        <div className="mb-8 flex items-center gap-4">
+          <h2 className="flex-shrink-0 text-lg font-medium text-accent dark:text-zinc-700">
+            Quick view
+          </h2>
+          <div className="h-[1px] w-full bg-zinc-100 dark:bg-zinc-900" />
+        </div>
+        <div className="flex flex-col gap-8">
+          {list.map((item, index) => (
+            <div
+              key={index}
+              className="group/link relative flex flex-col items-start gap-2 md:flex-row lg:gap-4"
+            >
+              <div className="w-full">
+                <div className="sticky top-32 pl-1 z-40 flex items-center justify-between gap-4 py-2 md:gap-8">
+                  <div className="bg-light-zinc/95 absolute left-1/2 h-full w-full -translate-x-1/2 bg-background backdrop-blur-xl" />
+                  <div className="relative flex items-center gap-2 md:gap-3">
+                    <h3 className="text-xl font-semibold">{item.name}</h3>
+                  </div>
+                </div>
+                <PopularTokens />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
