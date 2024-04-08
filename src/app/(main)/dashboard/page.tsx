@@ -1,7 +1,12 @@
+import { Nav } from "../overview/_components/nav";
+
 export default function DashboardPage() {
   return (
-    <section className="container relative h-full flex-1 pt-40">
-      <div className="">Dashboard</div>
-    </section>
+    <>
+      <Nav />
+      <div className="flex h-full flex-1 items-center justify-center">
+        Coming soon...
+      </div>
+    </>
   );
 }

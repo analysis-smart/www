@@ -10,7 +10,7 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <Link href="/" className="hidden md:flex md:items-center">
+    <Link href="/" className="flex md:items-center">
       <Image
         src="/assets/logo.svg"
         height={40}
@@ -25,7 +25,7 @@ export const Logo = () => {
         alt="Logo"
         className="hidden dark:block"
       />
-      <p className={cn("text-lg font-bold tracking-wide", font.className)}>
+      <p className={cn("text-lg font-bold tracking-wide md:block hidden", font.className)}>
         SolTeller
       </p>
     </Link>

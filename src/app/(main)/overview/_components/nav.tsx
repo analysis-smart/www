@@ -4,7 +4,7 @@ import { Icons } from "~/components/icons";
 
 export function Nav() {
   return (
-    <div className="space-y-4 px-0.5 py-1">
+    <div className="hidden space-y-4 px-0.5 py-1 md:block">
       <Link
         href="/overview"
         target="_blank"

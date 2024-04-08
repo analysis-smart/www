@@ -44,14 +44,14 @@ export function SiteHeader() {
             <WalletButton />
           </div>
         </div>
-        <div className="container mx-auto hidden items-center space-x-6 border-b border-border px-12 pt-2.5 text-sm  lg:flex bg-background z-50">
+        <div className="container z-50 mx-auto  items-center space-x-6 border-b border-border bg-background px-12  pt-2.5 text-sm lg:flex">
           {tabs.map((tab) => (
             <Link
               href={tab.link}
               className={cn(
                 "group border-foreground/50 pb-[6px] first:-ml-3 hover:border-b",
                 tab.link === pathname.replace(/^\/+/, "") &&
-                "border-b border-foreground",
+                  "border-b border-foreground",
               )}
               key={tab.name.toLowerCase()}
             >

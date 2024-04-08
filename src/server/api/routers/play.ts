@@ -1,8 +1,8 @@
 import { z } from "zod";
-
+import { useQuery } from "@tanstack/react-query";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
-export const postRouter = createTRPCRouter({
+export const playRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
@@ -24,9 +24,18 @@ export const postRouter = createTRPCRouter({
       });
     }),
 
-  getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.post.findFirst({
-      orderBy: { createdAt: "desc" },
-    });
-  }),
+  getPrice: publicProcedure
+    .input(z.object({ token: z.string() }))
+    .query(async ({ input }) => {
+      const fetchPrice = async () => {
+        const response = await fetch(
+          "https://www.okx.com/api/v5/market/index-tickers?instId=SOL-USDT",
+        );
+
+        return response.json();
+      };
+      const data = await fetchPrice();
+
+      return data;
+    }),
 });
