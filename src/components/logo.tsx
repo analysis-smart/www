@@ -10,20 +10,20 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <Link href="/" className="flex md:items-center">
+    <Link href="/" className="flex md:items-center gap-2">
       <Image
-        src="/assets/logo.jpg"
+        src="/logo.jpg"
         height={40}
         width={40}
         alt="Logo"
-        className="dark:hidden"
+        className="dark:hidden rounded-full"
       />
       <Image
-        src="/assets/logo.jpg"
+        src="/logo.jpg"
         height={40}
         width={40}
         alt="Logo"
-        className="hidden dark:block"
+        className="hidden dark:block rounded-full"
       />
       <p className={cn("text-lg font-bold tracking-wide md:block hidden", font.className)}>
         TokenSpy
