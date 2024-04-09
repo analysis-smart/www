@@ -12,21 +12,21 @@ export const Logo = () => {
   return (
     <Link href="/" className="flex md:items-center">
       <Image
-        src="/assets/logo.svg"
+        src="/assets/logo.jpg"
         height={40}
         width={40}
         alt="Logo"
         className="dark:hidden"
       />
       <Image
-        src="/assets/logo-dark.svg"
+        src="/assets/logo.jpg"
         height={40}
         width={40}
         alt="Logo"
         className="hidden dark:block"
       />
       <p className={cn("text-lg font-bold tracking-wide md:block hidden", font.className)}>
-        SolTeller
+        TokenSpy
       </p>
     </Link>
   );

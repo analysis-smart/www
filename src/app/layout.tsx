@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "SolTeller",
-  description: "Sol Teller",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "TokenSpy",
+  description: "Sol TokenSpy",
+  icons: [{ rel: "icon", url: "/logo.jpg" }],
 };
 
 export default function RootLayout({
