@@ -5,8 +5,6 @@ import { PopularTokens } from "./_components/popular-tokens";
 import { Smart } from "./_components/smart";
 
 export default function OverViewPage() {
-  const list = [{ name: "Popular tokens" }];
-
   return (
     <>
       <div className="stable-scrollbar-gutter w-full space-y-6 overflow-y-auto">
@@ -21,7 +19,7 @@ export default function OverViewPage() {
           <div className="h-[1px] w-full bg-zinc-100 dark:bg-zinc-900" />
         </div>
         <div className="flex flex-col gap-8">
-          <div className="group/link relative flex flex-col items-start gap-2 md:flex-row lg:gap-4">
+          <div className="group/link relative flex flex-col items-start gap-2 md:flex-row lg:gap-4 xl:gap-6">
             <div className="sapce-y-6 w-full">
               <div className="sticky top-32 z-40 flex items-center justify-between gap-4 py-2 pl-1 md:gap-8">
                 <div className="bg-light-zinc/95 absolute left-1/2 h-full w-full -translate-x-1/2 bg-background backdrop-blur-xl" />
