@@ -22,7 +22,7 @@ const tabs: TabProps[] = [
   },
   {
     name: "Dashboard",
-    link: "dashboard",
+    link: "dashboard/btc",
   },
 ];
 
