@@ -18,11 +18,11 @@ interface TabProps {
 const tabs: TabProps[] = [
   {
     name: "Over view",
-    link: "overview",
+    link: "/overview",
   },
   {
     name: "Dashboard",
-    link: "dashboard/btc",
+    link: "/dashboard/btc",
   },
 ];
 
